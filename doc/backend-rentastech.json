@@ -1,0 +1,1459 @@
+{
+	"info": {
+		"_postman_id": "0e231387-492b-46e9-96c0-d6784ff33dcd",
+		"name": "Backend-RentasTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38822720",
+		"_collection_link": "https://compunettt.postman.co/workspace/My-Workspace~2ab7f20f-cde4-49f1-a93c-0a2b3cc77173/collection/38822720-0e231387-492b-46e9-96c0-d6784ff33dcd?action=share&source=collection_link&creator=38822720"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.environment.set(\"authToken\", response.token);\r",
+									"pm.collectionVariables.set(\"authToken\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"juan@example.com\",\r\n  \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login #2-admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"token\", data.token);\r",
+									"pm.environment.set(\"user-id\", data.id);\r",
+									"pm.environment.set(\"user-email\", data.email);\r",
+									"\r",
+									"pm.collectionVariables.set(\"token\", data.token);\r",
+									"pm.collectionVariables.set(\"user-id\", data.id);\r",
+									"pm.collectionVariables.set(\"user-email\", data.email);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"holaMundo1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Juan Caviedez\",\r\n  \"email\": \"juan@example.com\",\r\n  \"password\": \"Test1234\",\r\n  \"dni\": \"1234567890\",\r\n  \"phone\": \"3011112233\",\r\n  \"roles\": [\"client\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro #2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"token\", data.token);\r",
+									"pm.collectionVariables.set(\"token\", data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"holaMundo1\",\r\n  \"fullName\": \"Danna López\",\r\n  \"roles\": [\"client\", \"admin\", \"technician\"],\r\n  \"dni\": \"1109221560\",\r\n  \"phone\": \"6669993378\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"client-id\", data.id)\r",
+									"pm.collectionVariables.set(\"client-id\", data.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"nay@gmail.com\",\r\n  \"password\": \"olaMundo1\",\r\n  \"fullName\": \"Nayeli Suarez\",\r\n  \"roles\": [\"client\"],\r\n  \"dni\": \"1109221559\",\r\n  \"phone\": \"6669993377\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Auth Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/check-auth-status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"check-auth-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/admin-dashboard",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"admin-dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sales Dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/auth/sales-dashboard",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sales-dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Technician",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"techn-id\", data.id)\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"caviedez@gmail.com\",\r\n  \"password\": \"holaMundo1\",\r\n  \"fullName\": \"Sebastian Caviedez\",\r\n  \"roles\": [\"technician\"],\r\n  \"dni\": \"1109221669\",\r\n  \"phone\": \"6669998899\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/email/{{user-email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"email",
+								"{{user-email}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Danna V Lopez M\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/{{user-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{client-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{client-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get all roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create rol",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"role-id\", data.id)\r",
+									"pm.collectionVariables.set(\"role-id\", data.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Prueba\",\r\n  \"description\": \"Role created during postman test\",\r\n  \"permissions\": [\"123456\", \"view\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get role by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/roles/{{role-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"{{role-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test\",\r\n  \"description\": \"Role created during postman test\",\r\n  \"permissions\": [\"view-request\", \"view-dashboards\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/{{role-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"{{role-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/{{role-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"{{role-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Equipments",
+			"item": [
+				{
+					"name": "Create computer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"equipment-comp-id\", data.id)\r",
+									"pm.collectionVariables.set(\"equipment-comp-id\", data.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Laptop Pro\",\r\n  \"type\": \"computer\",\r\n  \"brand\": \"TechBrand\",\r\n  \"model\": \"X-2000\",\r\n  \"description\": \"High performance laptop\",\r\n  \"price\": 1299.99,\r\n  \"stock\": 50,\r\n  \"warrantyPeriod\": \"2 years\",\r\n  \"releaseDate\": \"2023-06-15\",\r\n  \"computerSpecs\": {\r\n    \"processor\": \"Intel Core i7\",\r\n    \"ram\": \"16GB DDR4\",\r\n    \"storage\": \"1TB SSD\",\r\n    \"os\": \"Windows 11 Pro\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/equipments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create printer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Office Printer\",\r\n  \"type\": \"printer\",\r\n  \"brand\": \"PrintMaster\",\r\n  \"model\": \"PM-500\",\r\n  \"description\": \"Color laser printer\",\r\n  \"price\": 349.99,\r\n  \"stock\": 30,\r\n  \"warrantyPeriod\": \"1 year\",\r\n  \"releaseDate\": \"2023-03-10\",\r\n  \"printerSpecs\": {\r\n    \"printTechnology\": \"Láser\",\r\n    \"resolution\": \"1200x1200 dpi\",\r\n    \"connectivity\": \"Wi-Fi, USB, Ethernet\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/equipments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create phone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"equipment-ph-id\", data.id)\r",
+									"pm.collectionVariables.set(\"equipment-ph-id\", data.id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"SmartPhone X\",\r\n  \"type\": \"phone\",\r\n  \"brand\": \"MobileTech\",\r\n  \"model\": \"X-Phone\",\r\n  \"description\": \"Flagship smartphone\",\r\n  \"price\": 899.99,\r\n  \"stock\": 100,\r\n  \"warrantyPeriod\": \"1 year\",\r\n  \"releaseDate\": \"2023-09-01\",\r\n  \"phoneSpecs\": {\r\n    \"screenSize\": \"6.7 inches\",\r\n    \"battery\": \"5000 mAh\",\r\n    \"camera\": \"Triple 50MP\",\r\n    \"os\": \"Android 13\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/equipments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all equipments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/equipments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get equipment by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/equipments/{{equipment-ph-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments",
+								"{{equipment-ph-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify equipment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"SmartPhone Samsung\",\r\n  \"type\": \"phone\",\r\n  \"brand\": \"MobileTech\",\r\n  \"model\": \"A54\",\r\n  \"description\": \"Flagship smartphone\",\r\n  \"price\": 699.99,\r\n  \"stock\": 100,\r\n  \"warrantyPeriod\": \"1 year\",\r\n  \"releaseDate\": \"2024-09-01\",\r\n  \"phoneSpecs\": {\r\n    \"screenSize\": \"6.7 inches\",\r\n    \"battery\": \"5000 mAh\",\r\n    \"camera\": \"Triple 50MP\",\r\n    \"os\": \"Android 13\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/equipments/{{equipment-ph-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments",
+								"{{equipment-ph-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete equipment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/equipments/{{equipment-ph-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"equipments",
+								"{{equipment-ph-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"HP ProBook\",\r\n  \"type\": \"computer\",\r\n  \"brand\": \"HP\",\r\n  \"model\": \"450 G8\",\r\n  \"description\": \"Laptop empresarial\",\r\n  \"price\": 1200,\r\n  \"stock\": 5,\r\n  \"warrantyPeriod\": \"2 years\",\r\n  \"releaseDate\": \"2023-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url\n}}/equipments",
+							"host": [
+								"{{base_url\n}}"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rentals",
+			"item": [
+				{
+					"name": "Rent equipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"rentalContractId\", response.rentalContract.id);\r",
+									"pm.collectionVariables.set(\"rentalContractId\", response.rentalContract.id);\r",
+									"pm.environment.set(\"contractId\", response.contract.contract_id);\r",
+									"pm.collectionVariables.set(\"contractId\", response.contract.contract_id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"equipmentId\": \"a5969575-6d3e-4c0b-b99b-57dde547a071\",\r\n  \"startDate\": \"2024-06-01T00:00:00.000Z\",\r\n  \"endDate\": \"2024-12-01T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/rentals/request",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rentals",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all the rents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rentals/my-contracts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rentals",
+								"my-contracts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Metrics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rentals/metrics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rentals",
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deliveries",
+			"item": [
+				{
+					"name": "Create delivery",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"delivery-id\", data.delivery.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rental\": { \"id\": \"711f582c-e34f-4b81-a450-11c259f6ad19\" },\r\n    \"technician\": { \"id\": \"4ec77638-0509-4117-9f1a-d85603f59732\" },\r\n    \"client\": { \"id\": \"aaccde07-7681-4e13-82d3-77489d1eafdb\" },\r\n    \"actDocumentUrl\": \"https://example.com/documents/acta-123.pdf\",\r\n    \"clientSignatureUrl\": \"https://example.com/signatures/firma-123.png\",\r\n    \"visualObservations\": \"No visible scratches.\",\r\n    \"technicalObservations\": \"Equipment in good condition and functional.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/deliveries",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all deliveries",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/deliveries",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get delivery by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/deliveries/{{delivery-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deliveries",
+								"{{delivery-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"accepted\",\r\n    \"technicalObservations\": \"The equipment was returned in perfect condition with no visible damage.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/deliveries/{{delivery-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deliveries",
+								"{{delivery-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/deliveries/{{delivery-id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"deliveries",
+								"{{delivery-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Labs",
+			"item": [
+				{
+					"name": "Report damaged equipment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"labsId\", response.lab.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"notes\": \"Screen does not turn on\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/labs/report/{{rentalContractId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"labs",
+								"report",
+								"{{rentalContractId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report damaged equipment for repair",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{base_url}}/labs/{{labsId}}/repair",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"labs",
+								"{{labsId}}",
+								"repair"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contratos",
+			"item": [
+				{
+					"name": "Get all contracts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contracts/my",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contracts",
+								"my"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user-id",
+			"value": ""
+		},
+		{
+			"key": "user-email",
+			"value": ""
+		},
+		{
+			"key": "delivery-id",
+			"value": ""
+		},
+		{
+			"key": "base_url",
+			"value": "https://backend-rentas-tech.vercel.app/",
+			"type": "string"
+		},
+		{
+			"key": "auth-token-cl",
+			"value": ""
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "client-id",
+			"value": ""
+		},
+		{
+			"key": "techn-id",
+			"value": ""
+		},
+		{
+			"key": "role-id",
+			"value": ""
+		},
+		{
+			"key": "equipment-comp-id",
+			"value": ""
+		},
+		{
+			"key": "equipment-ph-id",
+			"value": ""
+		},
+		{
+			"key": "rentalContractId",
+			"value": ""
+		},
+		{
+			"key": "contractId",
+			"value": ""
+		}
+	]
+}
