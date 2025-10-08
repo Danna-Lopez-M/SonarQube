@@ -1,0 +1,221 @@
+name: Deploy SonarQube to Azure VM
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'docker-compose.yml'
+      - 'sonar-project.properties'
+      - '.github/workflows/deploy-sonarqube-vm.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docker-compose.yml'
+      - 'sonar-project.properties'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - prod
+
+env:
+  VM_IP: ${{ secrets.VM_PUBLIC_IP }}
+  VM_USERNAME: ${{ secrets.VM_USERNAME }}
+  VM_PASSWORD: ${{ secrets.VM_PASSWORD }}
+
+jobs:
+  deploy-sonarqube:
+    name: Deploy SonarQube to VM
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'dev' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install SSH dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y sshpass
+
+    - name: Test VM connectivity
+      run: |
+        echo "Testing connection to VM at ${{ env.VM_IP }}"
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "echo 'VM connection successful'"
+
+    - name: Create project directory on VM
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          echo 'Creating project directory...'
+          mkdir -p /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          echo 'Project directory created successfully'
+        "
+
+    - name: Copy docker-compose.yml to VM
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' scp -o StrictHostKeyChecking=no docker-compose.yml ${{ env.VM_USERNAME }}@${{ env.VM_IP }}:/home/${{ env.VM_USERNAME }}/project-backend-rentastech/
+        echo "docker-compose.yml copied successfully"
+
+    - name: Copy sonar-project.properties to VM
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' scp -o StrictHostKeyChecking=no sonar-project.properties ${{ env.VM_USERNAME }}@${{ env.VM_IP }}:/home/${{ env.VM_USERNAME }}/project-backend-rentastech/
+        echo "sonar-project.properties copied successfully"
+
+    - name: Install Docker on VM (if not installed)
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          echo 'Checking if Docker is installed...'
+          if ! command -v docker &> /dev/null; then
+            echo 'Installing Docker...'
+            sudo apt-get update
+            sudo apt-get install -y docker.io docker-compose
+            sudo systemctl start docker
+            sudo systemctl enable docker
+            sudo usermod -aG docker ${{ env.VM_USERNAME }}
+            echo 'Docker installed successfully'
+          else
+            echo 'Docker is already installed'
+          fi
+        "
+
+    - name: Stop existing SonarQube containers
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          echo 'Stopping existing SonarQube containers...'
+          sudo docker-compose down || echo 'No existing containers to stop'
+        "
+
+    - name: Deploy SonarQube with Docker Compose
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          echo 'Starting SonarQube with Docker Compose...'
+          sudo docker-compose up -d
+          echo 'SonarQube deployment initiated'
+        "
+
+    - name: Wait for SonarQube to start
+      run: |
+        echo "Waiting for SonarQube to start..."
+        sleep 30
+        
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          echo 'Checking container status...'
+          sudo docker-compose ps
+        "
+
+    - name: Verify SonarQube deployment
+      run: |
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          echo 'Verifying SonarQube deployment...'
+          
+          # Check if containers are running
+          echo 'Container status:'
+          sudo docker-compose ps
+          
+          # Check if port 9000 is listening
+          echo 'Port 9000 status:'
+          sudo netstat -tlnp | grep 9000 || echo 'Port 9000 not yet listening'
+          
+          # Check SonarQube logs
+          echo 'Recent SonarQube logs:'
+          sudo docker-compose logs sonarqube | tail -10
+        "
+
+    - name: Configure Azure NSG (if needed)
+      run: |
+        echo "Checking if NSG rule for port 9000 exists..."
+        
+        # Check if the rule exists
+        RULE_EXISTS=$(az network nsg rule show \
+          --resource-group rg-ingesoft-dev \
+          --nsg-name nsg-ingesoft-dev \
+          --name allow-sonarqube \
+          --query "name" \
+          --output tsv 2>/dev/null || echo "")
+        
+        if [ -z "$RULE_EXISTS" ]; then
+          echo "Creating NSG rule for SonarQube port 9000..."
+          az network nsg rule create \
+            --resource-group rg-ingesoft-dev \
+            --nsg-name nsg-ingesoft-dev \
+            --name allow-sonarqube \
+            --priority 1002 \
+            --direction Inbound \
+            --access Allow \
+            --protocol Tcp \
+            --source-address-prefixes '*' \
+            --destination-address-prefix '*' \
+            --destination-port-ranges 9000 \
+            --description "Allow SonarQube access"
+          echo "NSG rule created successfully"
+        else
+          echo "NSG rule for port 9000 already exists"
+        fi
+
+    - name: Health check SonarQube
+      run: |
+        echo "Performing health check on SonarQube..."
+        
+        # Wait a bit more for SonarQube to fully start
+        sleep 60
+        
+        sshpass -p '${{ env.VM_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ env.VM_USERNAME }}@${{ env.VM_IP }} "
+          cd /home/${{ env.VM_USERNAME }}/project-backend-rentastech
+          
+          # Try to access SonarQube API
+          echo 'Testing SonarQube API...'
+          curl -f http://localhost:9000/api/system/status || echo 'SonarQube API not yet ready'
+          
+          # Check final container status
+          echo 'Final container status:'
+          sudo docker-compose ps
+        "
+
+    - name: Deployment Summary
+      run: |
+        echo "## 🚀 SonarQube Deployment Completed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**VM IP:** ${{ env.VM_IP }}" >> $GITHUB_STEP_SUMMARY
+        echo "**SonarQube URL:** http://${{ env.VM_IP }}:9000" >> $GITHUB_STEP_SUMMARY
+        echo "**Environment:** ${{ github.event.inputs.environment || 'dev' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📋 Access Information:" >> $GITHUB_STEP_SUMMARY
+        echo "- **Username:** admin" >> $GITHUB_STEP_SUMMARY
+        echo "- **Password:** admin" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### ⚠️ Important Notes:" >> $GITHUB_STEP_SUMMARY
+        echo "1. Change the default password after first login" >> $GITHUB_STEP_SUMMARY
+        echo "2. SonarQube may take a few minutes to fully start" >> $GITHUB_STEP_SUMMARY
+        echo "3. Check container logs if there are any issues" >> $GITHUB_STEP_SUMMARY
+
+    - name: Comment PR with deployment info
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🚀 **SonarQube desplegado automáticamente en la VM!**
+            
+            **URL de SonarQube:** http://${{ env.VM_IP }}:9000
+            
+            **Credenciales por defecto:**
+            - Usuario: admin
+            - Contraseña: admin
+            
+            **Importante:** Cambia la contraseña por defecto después del primer login.
+            
+            El despliegue se realizó automáticamente mediante GitHub Actions.`
+          })

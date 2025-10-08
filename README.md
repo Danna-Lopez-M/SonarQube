@@ -205,35 +205,83 @@ El pipeline se ejecuta automáticamente en:
 - **Rollback automático** en caso de fallos
 - **Logs detallados** del proceso
 
-## Configuración Final
+### 8. Análisis de Seguridad con Trivy
 
-### Acceso a SonarQube
+Se implementó análisis automático de vulnerabilidades usando Trivy para escanear las imágenes Docker:
 
-**URL:** `http://20.57.43.71:9000`
+#### Pipeline de Seguridad
 
-**Credenciales por defecto:**
-- Usuario: `admin`
-- Contraseña: `admin`
+El pipeline `.github/workflows/security-scan.yml` realiza automáticamente:
 
-### Estado de los Servicios
+1. **Escaneo de imágenes Docker** (SonarQube y PostgreSQL)
+2. **Análisis del sistema de archivos** (si existe Dockerfile)
+3. **Detección de secretos** en el código
+4. **Verificación de configuración** de seguridad
+5. **Reportes detallados** en múltiples formatos
+6. **Integración con GitHub Security** tab
+7. **Comentarios automáticos** en PRs con resultados
 
-SonarQube está ejecutándose con:
-- **Base de datos:** PostgreSQL 13
-- **Puerto:** 9000
-- **Memoria optimizada:** 512MB para SonarQube, 256MB para Elasticsearch
-- **Volúmenes persistentes:** Configuración y datos
+#### Configuración de Trivy
 
-### Verificación del Despliegue
+- **Archivo de configuración:** `trivy.yaml`
+- **Archivo de ignorar:** `.trivyignore`
+- **Script local:** `trivy-scan.sh`
+
+#### Triggers del Pipeline de Seguridad
+
+El pipeline se ejecuta automáticamente en:
+- Push a ramas `main` o `develop`
+- Pull Requests a `main`
+- **Ejecución programada** diaria a las 2 AM UTC
+- Ejecución manual
+
+#### Características del Análisis
+
+- ✅ **Escaneo de vulnerabilidades** en imágenes Docker
+- ✅ **Detección de secretos** en el código
+- ✅ **Análisis de configuración** de seguridad
+- ✅ **Reportes en múltiples formatos** (JSON, SARIF, tabla)
+- ✅ **Integración con GitHub Security** tab
+- ✅ **Fallar build** si hay vulnerabilidades críticas
+- ✅ **Notificaciones automáticas** en PRs
+
+#### Uso Local de Trivy
 
 ```bash
-# Verificar conectividad a la VM
-ping 20.57.43.71
+# Instalar y ejecutar análisis completo
+bash trivy-scan.sh
 
-# Verificar que SonarQube esté funcionando
-curl http://20.57.43.71:9000/api/system/status
+# Solo escanear imágenes Docker
+bash trivy-scan.sh --images
 
-# Conectarse a la VM para verificar
-sshpass -p 'AzureVM123!' ssh azureuser@20.57.43.71
+# Solo escanear sistema de archivos
+bash trivy-scan.sh --fs
+
+# Mostrar solo resumen
+bash trivy-scan.sh --summary
+```
+
+### Gestión de Seguridad con Trivy
+
+```bash
+# Análisis completo de seguridad
+bash trivy-scan.sh
+
+# Escanear solo imágenes específicas
+trivy image sonarqube:latest
+trivy image postgres:13
+
+# Escanear con configuración personalizada
+trivy image sonarqube:latest --config trivy.yaml
+
+# Generar reporte en formato SARIF
+trivy image sonarqube:latest --format sarif --output sonarqube.sarif
+
+# Escanear sistema de archivos
+trivy fs . --severity HIGH,CRITICAL
+
+# Ver vulnerabilidades ignoradas
+cat .trivyignore
 ```
 
 ## Imágenes del Proceso

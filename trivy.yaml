@@ -1,0 +1,80 @@
+# Configuración de Trivy para análisis de seguridad
+# Este archivo define las políticas y configuraciones para el escaneo de vulnerabilidades
+
+# Configuración general
+format: table
+severity: HIGH,CRITICAL
+exit-code: 0
+timeout: 5m
+quiet: false
+
+# Configuración de caché
+cache-dir: ~/.cache/trivy
+
+# Configuración de base de datos
+db-repository: ghcr.io/aquasecurity/trivy-db
+java-db-repository: ghcr.io/aquasecurity/trivy-java-db
+
+# Configuración de reportes
+output: 
+  - format: table
+    file: trivy-report.txt
+  - format: json
+    file: trivy-report.json
+  - format: sarif
+    file: trivy-report.sarif
+
+# Configuración de ignorar vulnerabilidades específicas
+# Descomenta y agrega las vulnerabilidades que quieres ignorar
+# ignorefile: .trivyignore
+
+# Configuración de políticas de seguridad
+# Descomenta para usar políticas personalizadas
+# policy: policies/
+
+# Configuración de escaneo de secretos
+scanners:
+  - vuln
+  - secret
+  - config
+
+# Configuración de secretos
+secret-config: |
+  rules:
+    - id: generic-uncommitted-secret
+      pattern: (?i)(password|passwd|pwd|secret|key|token|api_key|apikey|access_token|private_key|privatekey)
+      severity: HIGH
+      message: "Potential secret detected"
+    - id: aws-access-key
+      pattern: AKIA[0-9A-Z]{16}
+      severity: CRITICAL
+      message: "AWS Access Key detected"
+    - id: aws-secret-key
+      pattern: [0-9a-zA-Z/+]{40}
+      severity: CRITICAL
+      message: "AWS Secret Key detected"
+
+# Configuración de escaneo de configuración
+config-policy: |
+  policies:
+    - id: dockerfile-security
+      title: Dockerfile Security Best Practices
+      description: Check for security best practices in Dockerfile
+      severity: MEDIUM
+      rules:
+        - id: no-root-user
+          title: "Container should not run as root"
+          description: "Running containers as root is a security risk"
+          severity: HIGH
+          query: |
+            import data.dockerfile
+            
+            dockerfile.USER == "root"
+        - id: use-specific-tag
+          title: "Use specific image tags"
+          description: "Using 'latest' tag can lead to unexpected behavior"
+          severity: MEDIUM
+          query: |
+            import data.dockerfile
+            
+            dockerfile.FROM contains "latest"
