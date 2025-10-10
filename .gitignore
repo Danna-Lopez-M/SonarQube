@@ -1,0 +1,24 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars.local
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Azure
+.azure/
+
+# Logs
+*.log

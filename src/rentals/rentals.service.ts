@@ -151,7 +151,7 @@ export class RentalsService {
     return {
       active,
       pending,
-      revenue: parseFloat(revenueResult.revenue) || 0,
+      revenue: Number(revenueResult.revenue) || 0,
     };
   }
 }

@@ -28,6 +28,16 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
 
+  trivy:
+      image: aquasec/trivy:latest
+      networks:
+        - sonarnet
+      volumes:
+        - ./:/project:ro  
+        - trivy_cache:/root/.cache/trivy  
+        - /var/run/docker.sock:/var/run/docker.sock:ro  
+      command: --version 
+
 networks:
   sonarnet:
     driver: bridge
@@ -39,3 +49,4 @@ volumes:
   sonarqube_bundled-plugins:
   postgresql:
   postgresql_data:
+  trivy_cache: 

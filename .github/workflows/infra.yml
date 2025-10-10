@@ -1,0 +1,74 @@
+name: Deploy Infrastructure (Azure VM with Terraform)
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: dev
+        type: choice
+        options:
+        - dev
+        - prod
+  push:
+    branches: [ main ]
+    paths:
+      - "VM-Terraform-MODULAR/**"
+      - ".github/workflows/infra.yml"
+
+env:
+  TF_IN_AUTOMATION: true
+
+jobs:
+  terraform:
+    name: Terraform Apply (${{ github.event.inputs.environment || 'dev' }})
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: VM-Terraform-MODULAR/environments/dev
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init -input=false
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -auto-approve tfplan
+
+      - name: Terraform Outputs
+        id: tf_outputs
+        run: |
+          echo "public_ip=$(terraform output -raw public_ip || true)" >> $GITHUB_OUTPUT
+          echo "vm_admin_user=$(terraform output -raw admin_username || true)" >> $GITHUB_OUTPUT
+
+      - name: Summary
+        run: |
+          echo "## 🚀 Infra deployed with Terraform" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ github.event.inputs.environment || 'dev' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Public IP:** ${{ steps.tf_outputs.outputs.public_ip }}" >> $GITHUB_STEP_SUMMARY
+          echo "**SonarQube URL:** http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Set \\`SONAR_HOST_URL\\` secret to: http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_STEP_SUMMARY
+
+

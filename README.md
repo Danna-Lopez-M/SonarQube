@@ -1,17 +1,59 @@
-# Despliegue de SonarQube en Máquina Virtual Azure
+# Despliegue de SonarQube y Trivy en VM Azure
 
-Este documento describe el proceso de despliegue de SonarQube en una máquina virtual de Azure Docker.
+**Danna Valentina López Muñoz - A00395625**
+
+Este documento describe el proceso de despliegue de SonarQube y Trivy en una máquina virtual de Azure usando Docker.
 
 ##  Resumen del Proceso
 
-Se desplegó exitosamente una máquina virtual en Azure y se configuró SonarQube con Docker Compose para análisis de calidad de código.
+### 1. Ejecución de Sonar y Trivy en local
 
-### 1. Despliegue de la Máquina Virtual
+Lo primero que se hizo fue probar que Sonar y Trivy funcionaran de manera local para el proyecto, primero se configuro SonarQube, agregando los archivos ´docker-compose.yml´ y ´sonar-project.properties´
 
-Se utilizó el proyecto Terraform existente en `VM-Terraform-MODULAR` para desplegar la infraestructura:
+![Ejecucción de SonarQube](imagenes/dockerfile.png)
+
+![Ejecucción de SonarQube](imagenes/sonar.png)
+
+ y se ejecuto el contenedor
+
+![Ejecucción del Contenedor](imagenes/ejecucion-contenedor.png)
+
+Posteriormente ejecutamos los siguientes comandos para analizar el proyecto con SonarQube y detectar que vulnerabilidades pueden haber en el proyecto
 
 ```bash
-cd VM-Terraform-MODULAR/environments/dev
+npm test -- --coverage
+```
+
+Este comando generará el archivo coverage/lcov.info que SonarQube usará. Y por siguiente ejecutaremos:
+```bash
+docker run --rm \
+  --network sonarqube_sonarnet \
+  -e SONAR_HOST_URL="http://sonarqube:9000" \
+  -v "$(pwd):/usr/src" \
+  sonarsource/sonar-scanner-cli
+```
+
+Por lo que cuando accedemos a la URL ´http://sonarqube:9000´ podemos ver que ya se carga el proyecto y podemos analizar la calidad del código y qué correciones se deben de realizar. Por ejemplo, en este caso se tiene un coverage del 82% y la condición para aprobar código es que fuera al menos del 80%. 
+![Análisis del proyecto en SonarQube](imagenes/proyecto-sonar.png)
+
+Ahora, para configurar Trivy lo que se hizo fue agregar el servicio al ´docker-compose.yml´ y ejecutar el siguiente comando
+
+```bash
+docker compose run --rm trivy fs --severity HIGH,CRITICAL /project
+```
+ 
+ Que genera el siguiente reporte
+
+ [Reporte Trivy 1](imagenes/reporte-trivy1.png)
+ [Reporte Trivy 2](imagenes/reporte-trivy2.png)
+
+
+### 2. Despliegue de la Máquina Virtual
+
+Se utilizó el proyecto Terraform existente en `terraform` para desplegar la infraestructura:
+
+```bash
+cd terraform/environments/dev
 terraform init
 terraform plan -var="admin_password=AzureVM123!"
 terraform apply -var="admin_password=AzureVM123!" -auto-approve
@@ -34,7 +76,6 @@ La VM se desplegó con las siguientes características:
 - **Usuario:** azureuser
 - **Contraseña:** AzureVM123!
 
-![Conexión a la VM](imagenes/conexionVM.png)
 
 ### 3. Instalación de Docker
 
