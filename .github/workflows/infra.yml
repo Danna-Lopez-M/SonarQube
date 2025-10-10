@@ -2,35 +2,22 @@ name: Deploy Infrastructure (Azure VM with Terraform)
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: "Target environment"
-        required: true
-        default: dev
-        type: choice
-        options:
-        - dev
-        - prod
-  push:
-    branches: [ main ]
-    paths:
-      - "VM-Terraform-MODULAR/**"
-      - ".github/workflows/infra.yml"
 
-env:
-  TF_IN_AUTOMATION: true
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   terraform:
-    name: Terraform Apply (${{ github.event.inputs.environment || 'dev' }})
+    name: Deploy VM and SonarQube
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-        working-directory: VM-Terraform-MODULAR/environments/dev
+        working-directory: terraform/environments/dev
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Azure Login
@@ -50,25 +37,23 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -input=false -out=tfplan
+        run: terraform plan -input=false
 
       - name: Terraform Apply
-        run: terraform apply -input=false -auto-approve tfplan
+        run: terraform apply -auto-approve -input=false
 
-      - name: Terraform Outputs
+      - name: Get Terraform Outputs
         id: tf_outputs
         run: |
-          echo "public_ip=$(terraform output -raw public_ip || true)" >> $GITHUB_OUTPUT
-          echo "vm_admin_user=$(terraform output -raw admin_username || true)" >> $GITHUB_OUTPUT
+          echo "public_ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
+          echo "vm_admin_user=$(terraform output -raw vm_admin_user)" >> $GITHUB_OUTPUT
 
-      - name: Summary
+      - name: Save environment variables
         run: |
-          echo "## 🚀 Infra deployed with Terraform" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Environment:** ${{ github.event.inputs.environment || 'dev' }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Public IP:** ${{ steps.tf_outputs.outputs.public_ip }}" >> $GITHUB_STEP_SUMMARY
-          echo "**SonarQube URL:** http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Set \\`SONAR_HOST_URL\\` secret to: http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_STEP_SUMMARY
+          echo "SONAR_HOST_URL=http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_ENV
+          echo "VM_USER=${{ steps.tf_outputs.outputs.vm_admin_user }}" >> $GITHUB_ENV
 
-
+      - name: Verify Docker and SonarQube
+        run: |
+          ssh -o StrictHostKeyChecking=no $VM_USER@${{ steps.tf_outputs.outputs.public_ip }} "docker ps"
+          echo "✅ Infraestructura desplegada correctamente"

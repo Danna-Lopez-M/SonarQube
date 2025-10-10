@@ -47,17 +47,25 @@ docker compose run --rm trivy fs --severity HIGH,CRITICAL /project
  [Reporte Trivy 1](imagenes/reporte-trivy1.png)
  [Reporte Trivy 2](imagenes/reporte-trivy2.png)
 
+Ya con el funcionamiento de los servicios en local procedemos a desplegarlos en la máquina virtual de azure
 
 ### 2. Despliegue de la Máquina Virtual
 
 Se utilizó el proyecto Terraform existente en `terraform` para desplegar la infraestructura:
 
 ```bash
+cd terraform
+scripts/deploy-dev.sh
+```
+
+Se utilizo el script en `terraform/scripts` para despliegar automaticamente la VM pero también se puede hacer manualmente ejecutando los siguientes comandos:
+```bash
 cd terraform/environments/dev
 terraform init
 terraform plan -var="admin_password=AzureVM123!"
 terraform apply -var="admin_password=AzureVM123!" -auto-approve
-```
+```  
+
 
 **Recursos desplegados:**
 - Resource Group: `rg-ingesoft-dev`
@@ -71,134 +79,132 @@ terraform apply -var="admin_password=AzureVM123!" -auto-approve
 
 La VM se desplegó con las siguientes características:
 - **OS:** Ubuntu 22.04 LTS
-- **Tamaño:** Standard_B1s (1 vCPU, 1GB RAM)
-- **IP Pública:** 20.57.43.71
+- **Tamaño:** Standard_B2s (1 vCPU, 4GB RAM)
+- **IP Pública:** 172.172.44.22
 - **Usuario:** azureuser
-- **Contraseña:** AzureVM123!
+- **Contraseña:** TuContrasenaSegura123!
+
+En cuanto a la configuración de la red, se agregó la regla para permitir el tráfico en el puerto 9000 como se puede ver en el archivo `terraform/environments/dev/terraform.tfvars`
+
+```bash
+{
+  name                       = "allow-sonarqube"
+  priority                   = 1002
+  direction                  = "Inbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "9000"
+  source_address_prefixes    = ["0.0.0.0/0"]
+  destination_address_prefix = "*"
+}
+```
 
 
 ### 3. Instalación de Docker
 
-Se instaló Docker y Docker Compose en la VM usando el repositorio oficial de Ubuntu:
+Nos conectamos a la VM y se instaló Docker y Docker Compose en la VM usando el repositorio oficial de Ubuntu:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y docker.io docker-compose
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo usermod -aG docker azureuser
+sudo usermod -aG docker $USER
 ```
 
 ![Instalación de Docker](imagenes/instalar-dockerVM.png)
 
 ### 4. Configuración del Proyecto
 
-Se creó el directorio del proyecto y se configuraron los archivos necesarios:
+Se creó el directorio del proyecto trasfiriendo el proyecto de la máquina local a la VM usando el comando scp:
 
 ```bash
-mkdir -p /home/azureuser/project-backend-rentastech
-cd /home/azureuser/project-backend-rentastech
+scp -r ./SonarQube azureuser@172.172.44.22:/home/azureuser/
 ```
 
-#### docker-compose.yml
-```yaml
-version: '2'
+![Clonación del proyecto](imagenes/clonar-proyecto.png)
+![Verificación de existencia del proyecto en VM](imagenes/proyecto-en-VM.png)
 
-services:
-  sonarqube:
-    image: sonarqube:latest
-    ports:
-      - "9000:9000"
-    networks:
-      - sonarnet
-    environment:
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
-      - SONARQUBE_JDBC_USERNAME=sonar
-      - SONARQUBE_JDBC_PASSWORD=sonar
-      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
-      - SONAR_WEB_JAVAADDITIONALOPTS=-Xmx512m -Xms256m
-      - SONAR_SEARCH_JAVAADDITIONALOPTS=-Xmx256m -Xms128m
-    volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
-
-  db:
-    image: postgres:13
-    networks:
-      - sonarnet
-    environment:
-      - POSTGRES_USER=sonar
-      - POSTGRES_PASSWORD=sonar
-    volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
-
-networks:
-  sonarnet:
-    driver: bridge
-
-volumes:
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_bundled-plugins:
-  postgresql:
-  postgresql_data:
-```
-
-#### sonar-project.properties
-```properties
-# SonarQube project configuration
-sonar.projectKey=project-backend-rentastech
-sonar.projectName=project-backend-rentastech
-sonar.projectVersion=1.0
-sonar.sourceEncoding=UTF-8
-
-# Sources and tests
-sonar.sources=src
-sonar.tests=src
-sonar.test.inclusions=**/*.spec.ts,**/*.integration.spec.ts,**/*e2e-spec.ts
-
-# Exclusions
-sonar.exclusions=**/node_modules/**,**/dist/**,**/*.d.ts,**/*.spec.ts,**/*.integration.spec.ts,**/*e2e-spec.ts
-
-# Coverage (Jest -> LCOV)
-sonar.javascript.lcov.reportPaths=coverage/lcov.info
-sonar.typescript.tsconfigPath=tsconfig.json
-```
-
-![Clonación del proyecto](imagenes/clonar-proyecto-en-VM.png)
+Una vez que se hizo este paso, se cerro sesión y se volvió a conectar a la VM.
 
 ### 5. Despliegue de SonarQube
 
 Se inició SonarQube usando Docker Compose:
 
 ```bash
+cd SonarQube/
 sudo docker-compose up -d
 ```
 
-![Instalación en la VM](imagenes/instalacion-en-VM.png)
-
-### 6. Configuración de Seguridad de Red
-
-Se agregó una regla al Network Security Group para permitir el tráfico en el puerto 9000:
+Eliminamos la versión antigua de node (v12) y limpiamos cache de apt para evitar conflictos
 
 ```bash
-az network nsg rule create \
-  --resource-group rg-ingesoft-dev \
-  --nsg-name nsg-ingesoft-dev \
-  --name allow-sonarqube \
-  --priority 1002 \
-  --direction Inbound \
-  --access Allow \
-  --protocol Tcp \
-  --source-address-prefixes '*' \
-  --destination-address-prefix '*' \
-  --destination-port-ranges 9000 \
-  --description "Allow SonarQube access"
+sudo apt remove -y nodejs npm libnode-dev
+sudo apt autoremove -y
+sudo apt clean
+sudo rm -rf /var/lib/apt/lists/*
+sudo apt update
 ```
+
+Y reinstalamos node a una versión más reciente (versión 20)
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+Ahora instalamos librerias del proyecto y ejecutamos el servicio como hicimos en local para que analice el proyecto (la carpeta de node_modules y coverage deben estar dentro del proyecto que se trasfirio a la VM, se recomienda enviar las carpeta comprimidas y descomprimirlas dentro del proyecto en la VM)
+
+```bash
+docker run --rm \
+  --network sonarqube_sonarnet \
+  -e SONAR_HOST_URL="http://sonarqube:9000" \
+  -v "$(pwd):/usr/src" \
+  sonarsource/sonar-scanner-cli
+```
+Vemos que al ejecutar el comando nos sale un error relacionado al token de SonarQube, esto es debido a que se requiere autenticación
+![Instalación en la VM](imagenes/despliegue-sonar.png)
+
+Por lo tanto, accedemos a la máquina mediante su ip por el puerto 9000 que fue donde expusimos el servicio
+```bash
+172.172.44.22:9000
+```
+
+Nos muestra la siguiente pantalla donde nos loguearemos con las credenciales `admin` para ambos campos
+
+![Cambio de credenciales para SonarQube](imagenes/login-sonar.png)
+
+La siguiente pantalla nos pedirá colocar la contraseña anterior (`admin`) y digitar una nueva, después de hacer eso llegamos a la pantalla de inicio y vamos a crear un nuevo token para reemplazar el que se había creado en local, se da click sobre la foto de perfil, se selecciona "My Account" y en el aparte de "Security" se crea el token global (Lo mejor es tener este token como un secreto o en un .env pero por simplicidad se dejara en el sonar-project.properties y en los comandos)
+
+![Generación de token](imagenes/security.png)
+
+Una vez que se agrego el nuevo token, volvemos ejecutar el comando para analizar el proyecto con SonarQube
+
+```bash
+docker run --rm \
+  --network sonarqube_sonarnet \
+  -e SONAR_HOST_URL="http://sonarqube:9000" \
+  -e SONAR_TOKEN="sqa_c2117a98d33c10db71be9ef64e4041b24e23e249" \
+  -v "$(pwd):/usr/src" \
+  sonarsource/sonar-scanner-cli
+```
+Con esto ya habremos analizado el proyecto y podemos ver la calidad del mismo en la interfaz de SonarQube en el apartado de `Projects` 
+
+![Comando para analizar proyecto (sonar-sacnner)](imagenes/proyecto-analizado.png)
+![Detalles sobre la calidad del código y posibles vulnerabilidades](imagenes/resultado-analisis.png)
+
+
+### 6. Despliegue de Trivy
+
+Para el caso de Trivy, como ya se pudo apreciar en local, no tiene una interfaz gráfica, así que vamos a ejecutar el siguiente comando en la VM
+
+```bash
+docker compose run --rm trivy fs --severity HIGH,CRITICAL /project > trivy_report.txt
+cat trivy_report.txt
+```
+
+![Generación de reporte con Trivy](imagenes/trivy-reporte.png)
+
 
 ### 7. Pipeline Automatizado de Despliegue
 
@@ -206,14 +212,8 @@ Se implementó un pipeline de GitHub Actions para automatizar el despliegue de S
 
 #### Configuración de Secrets
 
-Primero, configura los secrets necesarios en GitHub:
+Primero, configurar los secrets necesarios en GitHub:
 
-```bash
-# Ejecutar el script de configuración
-bash setup-github-secrets.sh
-```
-
-O configurar manualmente en GitHub:
 - `VM_PUBLIC_IP`: IP pública de la VM (ej: 20.57.43.71)
 - `VM_USERNAME`: Usuario de la VM (ej: azureuser)
 - `VM_PASSWORD`: Contraseña de la VM
@@ -236,110 +236,5 @@ El pipeline se ejecuta automáticamente en:
 - Push a ramas `main` o `develop`
 - Pull Requests a `main`
 - Ejecución manual con selección de environment
-
-#### Ventajas del Pipeline Automatizado
-
-- **Despliegue automático** sin intervención manual
-- **Verificación de salud** del servicio
-- **Configuración automática** del NSG
-- **Notificaciones** en PRs
-- **Rollback automático** en caso de fallos
-- **Logs detallados** del proceso
-
-### 8. Análisis de Seguridad con Trivy
-
-Se implementó análisis automático de vulnerabilidades usando Trivy para escanear las imágenes Docker:
-
-#### Pipeline de Seguridad
-
-El pipeline `.github/workflows/security-scan.yml` realiza automáticamente:
-
-1. **Escaneo de imágenes Docker** (SonarQube y PostgreSQL)
-2. **Análisis del sistema de archivos** (si existe Dockerfile)
-3. **Detección de secretos** en el código
-4. **Verificación de configuración** de seguridad
-5. **Reportes detallados** en múltiples formatos
-6. **Integración con GitHub Security** tab
-7. **Comentarios automáticos** en PRs con resultados
-
-#### Configuración de Trivy
-
-- **Archivo de configuración:** `trivy.yaml`
-- **Archivo de ignorar:** `.trivyignore`
-- **Script local:** `trivy-scan.sh`
-
-#### Triggers del Pipeline de Seguridad
-
-El pipeline se ejecuta automáticamente en:
-- Push a ramas `main` o `develop`
-- Pull Requests a `main`
-- **Ejecución programada** diaria a las 2 AM UTC
-- Ejecución manual
-
-#### Características del Análisis
-
-- ✅ **Escaneo de vulnerabilidades** en imágenes Docker
-- ✅ **Detección de secretos** en el código
-- ✅ **Análisis de configuración** de seguridad
-- ✅ **Reportes en múltiples formatos** (JSON, SARIF, tabla)
-- ✅ **Integración con GitHub Security** tab
-- ✅ **Fallar build** si hay vulnerabilidades críticas
-- ✅ **Notificaciones automáticas** en PRs
-
-#### Uso Local de Trivy
-
-```bash
-# Instalar y ejecutar análisis completo
-bash trivy-scan.sh
-
-# Solo escanear imágenes Docker
-bash trivy-scan.sh --images
-
-# Solo escanear sistema de archivos
-bash trivy-scan.sh --fs
-
-# Mostrar solo resumen
-bash trivy-scan.sh --summary
-```
-
-### Gestión de Seguridad con Trivy
-
-```bash
-# Análisis completo de seguridad
-bash trivy-scan.sh
-
-# Escanear solo imágenes específicas
-trivy image sonarqube:latest
-trivy image postgres:13
-
-# Escanear con configuración personalizada
-trivy image sonarqube:latest --config trivy.yaml
-
-# Generar reporte en formato SARIF
-trivy image sonarqube:latest --format sarif --output sonarqube.sarif
-
-# Escanear sistema de archivos
-trivy fs . --severity HIGH,CRITICAL
-
-# Ver vulnerabilidades ignoradas
-cat .trivyignore
-```
-
-## Imágenes del Proceso
-
-### Estructura del Proyecto
-![Estructura del proyecto](imagenes/proyecto.PNG)
-
-### Ejecución de la Imagen
-![Ejecución de la imagen](imagenes/ejecucion-imagen.png)
-
-### Configuración de SonarQube
-![Configuración de SonarQube](imagenes/sonar.PNG)
-
-### Dockerfile
-![Dockerfile](imagenes/dockerfile.PNG)
-
-### Coverage
-![Coverage](imagenes/coverage.PNG)
 
 

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759757291679" clover="3.2.0">
-  <project timestamp="1759757291680" name="All files">
-    <metrics statements="921" coveredstatements="788" conditionals="120" coveredconditionals="71" methods="152" coveredmethods="107" elements="1193" coveredelements="966" complexity="0" loc="921" ncloc="921" packages="30" files="65" classes="65"/>
+<coverage generated="1760072828397" clover="3.2.0">
+  <project timestamp="1760072828397" name="All files">
+    <metrics statements="921" coveredstatements="729" conditionals="120" coveredconditionals="71" methods="152" coveredmethods="105" elements="1193" coveredelements="905" complexity="0" loc="921" ncloc="921" packages="30" files="65" classes="65"/>
     <package name="src">
-      <metrics statements="45" coveredstatements="24" conditionals="5" coveredconditionals="0" methods="6" coveredmethods="3"/>
-      <file name="app.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\app.controller.ts">
+      <metrics statements="45" coveredstatements="8" conditionals="5" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <file name="app.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/app.controller.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="app.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\app.module.ts">
-        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="34" count="6" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="63" count="6" type="stmt"/>
+      <file name="app.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/app.module.ts">
+        <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
       </file>
-      <file name="app.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\app.service.ts">
+      <file name="app.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/app.service.ts">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
       </file>
-      <file name="main.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\main.ts">
+      <file name="main.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/main.ts">
         <metrics statements="20" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -63,55 +63,55 @@
       </file>
     </package>
     <package name="src.auth">
-      <metrics statements="72" coveredstatements="67" conditionals="11" coveredconditionals="8" methods="14" coveredmethods="12"/>
-      <file name="auth.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\auth.controller.ts">
+      <metrics statements="72" coveredstatements="66" conditionals="11" coveredconditionals="8" methods="14" coveredmethods="11"/>
+      <file name="auth.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/auth.controller.ts">
         <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
         <line num="19" count="6" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="33" count="8" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="51" count="8" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
       </file>
-      <file name="auth.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\auth.module.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="35" count="7" type="stmt"/>
+      <file name="auth.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/auth.module.ts">
+        <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
-      <file name="auth.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\auth.service.ts">
+      <file name="auth.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/auth.service.ts">
         <metrics statements="39" coveredstatements="34" conditionals="11" coveredconditionals="8" methods="7" coveredmethods="5"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="19" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
         <line num="21" count="8" type="stmt"/>
         <line num="22" count="8" type="stmt"/>
         <line num="23" count="8" type="stmt"/>
@@ -148,81 +148,81 @@
     </package>
     <package name="src.auth.decorators">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="auth.decorator.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\decorators\auth.decorator.ts">
+      <file name="auth.decorator.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/decorators/auth.decorator.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="14" type="stmt"/>
-        <line num="3" count="14" type="stmt"/>
-        <line num="4" count="14" type="stmt"/>
-        <line num="5" count="14" type="stmt"/>
-        <line num="7" count="14" type="stmt"/>
-        <line num="8" count="163" type="stmt"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="37" type="stmt"/>
       </file>
-      <file name="role-protected.decorator.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\decorators\role-protected.decorator.ts">
+      <file name="role-protected.decorator.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/decorators/role-protected.decorator.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="14" type="stmt"/>
-        <line num="4" count="14" type="stmt"/>
-        <line num="6" count="14" type="stmt"/>
-        <line num="7" count="163" type="stmt"/>
+        <line num="1" count="8" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="37" type="stmt"/>
       </file>
     </package>
     <package name="src.auth.decorators.get-user">
       <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="get-user.decorator.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\decorators\get-user\get-user.decorator.ts">
+      <file name="get-user.decorator.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/decorators/get-user/get-user.decorator.ts">
         <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="12" type="stmt"/>
-        <line num="4" count="12" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.auth.dtos">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="create-user.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\dtos\create-user.dto.ts">
+      <file name="create-user.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/dtos/create-user.dto.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="28" count="9" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
       </file>
-      <file name="login-user.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\dtos\login-user.dto.ts">
+      <file name="login-user.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/dtos/login-user.dto.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.auth.entities">
       <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="user.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\entities\user.entity.ts">
+      <file name="user.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/entities/user.entity.ts">
         <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
-        <line num="18" count="7" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="27" count="7" type="stmt"/>
-        <line num="30" count="7" type="stmt"/>
-        <line num="33" count="7" type="stmt"/>
-        <line num="36" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="41" count="7" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.auth.guards">
       <metrics statements="32" coveredstatements="16" conditionals="13" coveredconditionals="7" methods="5" coveredmethods="3"/>
-      <file name="jwt-auth.guard.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\guards\jwt-auth.guard.ts">
+      <file name="jwt-auth.guard.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/guards/jwt-auth.guard.ts">
         <metrics statements="16" coveredstatements="10" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="1"/>
-        <line num="1" count="15" type="stmt"/>
-        <line num="2" count="15" type="stmt"/>
-        <line num="6" count="15" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
@@ -237,11 +237,11 @@
         <line num="24" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="user-role.guard.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\guards\user-role.guard.ts">
+      <file name="user-role.guard.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/guards/user-role.guard.ts">
         <metrics statements="16" coveredstatements="6" conditionals="5" coveredconditionals="2" methods="3" coveredmethods="2"/>
-        <line num="1" count="15" type="stmt"/>
-        <line num="2" count="15" type="stmt"/>
-        <line num="7" count="15" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
         <line num="9" count="37" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="1" type="cond" truecount="2" falsecount="1"/>
@@ -259,27 +259,27 @@
     </package>
     <package name="src.auth.interfaces">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="valid-roles.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\interfaces\valid-roles.ts">
+      <file name="valid-roles.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/interfaces/valid-roles.ts">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="16" type="cond" truecount="2" falsecount="0"/>
-        <line num="2" count="16" type="stmt"/>
-        <line num="3" count="16" type="stmt"/>
-        <line num="4" count="16" type="stmt"/>
-        <line num="5" count="16" type="stmt"/>
-        <line num="6" count="16" type="stmt"/>
-        <line num="9" count="16" type="stmt"/>
+        <line num="1" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
       </file>
     </package>
     <package name="src.auth.strategies">
       <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="jwt.strategy.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\auth\strategies\jwt.strategy.ts">
+      <file name="jwt.strategy.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/auth/strategies/jwt.strategy.ts">
         <metrics statements="10" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
@@ -287,43 +287,43 @@
       </file>
     </package>
     <package name="src.contract">
-      <metrics statements="39" coveredstatements="35" conditionals="15" coveredconditionals="4" methods="9" coveredmethods="6"/>
-      <file name="contract.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\contract.controller.ts">
+      <metrics statements="39" coveredstatements="28" conditionals="15" coveredconditionals="4" methods="9" coveredmethods="6"/>
+      <file name="contract.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/contract.controller.ts">
         <metrics statements="14" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="32" count="7" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
       </file>
-      <file name="contract.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\contract.module.ts">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
+      <file name="contract.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/contract.module.ts">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
-      <file name="contract.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\contract.service.ts">
+      <file name="contract.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/contract.service.ts">
         <metrics statements="18" coveredstatements="17" conditionals="15" coveredconditionals="4" methods="5" coveredmethods="5"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="2" count="11" type="stmt"/>
-        <line num="3" count="11" type="stmt"/>
-        <line num="6" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="8" count="11" type="stmt"/>
-        <line num="11" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="14" count="7" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
@@ -339,23 +339,23 @@
     </package>
     <package name="src.contract.dto">
       <metrics statements="13" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="contract-detail.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\dto\contract-detail.dto.ts">
+      <file name="contract-detail.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/dto/contract-detail.dto.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="5" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="10" count="11" type="stmt"/>
-        <line num="13" count="11" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
-        <line num="19" count="11" type="stmt"/>
-        <line num="22" count="11" type="stmt"/>
-        <line num="29" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
       </file>
-      <file name="create-contract.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\dto\create-contract.dto.ts">
+      <file name="create-contract.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/dto/create-contract.dto.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
       </file>
-      <file name="update-contract.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\dto\update-contract.dto.ts">
+      <file name="update-contract.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/dto/update-contract.dto.ts">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -364,61 +364,61 @@
     </package>
     <package name="src.contract.entities">
       <metrics statements="13" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="contract.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\contract\entities\contract.entity.ts">
+      <file name="contract.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/contract/entities/contract.entity.ts">
         <metrics statements="13" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="14" type="stmt"/>
-        <line num="2" count="14" type="stmt"/>
-        <line num="3" count="14" type="stmt"/>
-        <line num="6" count="14" type="stmt"/>
-        <line num="8" count="14" type="stmt"/>
-        <line num="11" count="14" type="stmt"/>
-        <line num="14" count="14" type="stmt"/>
-        <line num="17" count="14" type="stmt"/>
-        <line num="20" count="14" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="14" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="14" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.deliveries">
-      <metrics statements="54" coveredstatements="51" conditionals="10" coveredconditionals="4" methods="12" coveredmethods="12"/>
-      <file name="deliveries.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\deliveries.controller.ts">
-        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
         <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
         <line num="11" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.deliveries">
+      <metrics statements="54" coveredstatements="45" conditionals="10" coveredconditionals="4" methods="12" coveredmethods="12"/>
+      <file name="deliveries.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/deliveries.controller.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
       </file>
-      <file name="deliveries.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\deliveries.module.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
+      <file name="deliveries.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/deliveries.module.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
       </file>
-      <file name="deliveries.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\deliveries.service.ts">
+      <file name="deliveries.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/deliveries.service.ts">
         <metrics statements="31" coveredstatements="28" conditionals="10" coveredconditionals="4" methods="6" coveredmethods="6"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
@@ -449,99 +449,99 @@
     </package>
     <package name="src.deliveries.dto">
       <metrics statements="20" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="create-delivery.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\dto\create-delivery.dto.ts">
+      <file name="create-delivery.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/dto/create-delivery.dto.ts">
         <metrics statements="14" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
-        <line num="36" count="8" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
       </file>
-      <file name="update-delivery.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\dto\update-delivery.dto.ts">
+      <file name="update-delivery.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/dto/update-delivery.dto.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.deliveries.entities">
       <metrics statements="17" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="delivery.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\deliveries\entities\delivery.entity.ts">
+      <file name="delivery.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/deliveries/entities/delivery.entity.ts">
         <metrics statements="17" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="28" count="9" type="stmt"/>
-        <line num="31" count="9" type="stmt"/>
-        <line num="34" count="9" type="stmt"/>
-        <line num="37" count="9" type="stmt"/>
-        <line num="40" count="9" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.equipments">
-      <metrics statements="106" coveredstatements="96" conditionals="28" coveredconditionals="22" methods="15" coveredmethods="15"/>
-      <file name="equipments.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\equipments.controller.ts">
+      <metrics statements="106" coveredstatements="87" conditionals="28" coveredconditionals="22" methods="15" coveredmethods="15"/>
+      <file name="equipments.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/equipments.controller.ts">
         <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
         <line num="18" count="13" type="stmt"/>
-        <line num="21" count="7" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
-        <line num="31" count="7" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
-        <line num="36" count="7" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="40" count="3" type="stmt"/>
-        <line num="44" count="7" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
         <line num="45" count="3" type="stmt"/>
       </file>
-      <file name="equipments.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\equipments.module.ts">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
+      <file name="equipments.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/equipments.module.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
       </file>
-      <file name="equipments.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\equipments.service.ts">
+      <file name="equipments.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/equipments.service.ts">
         <metrics statements="81" coveredstatements="71" conditionals="28" coveredconditionals="22" methods="9" coveredmethods="9"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="2" count="11" type="stmt"/>
-        <line num="3" count="11" type="stmt"/>
-        <line num="5" count="11" type="stmt"/>
-        <line num="6" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="8" count="11" type="stmt"/>
-        <line num="13" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
         <line num="16" count="19" type="stmt"/>
         <line num="19" count="19" type="stmt"/>
         <line num="22" count="19" type="stmt"/>
@@ -619,162 +619,162 @@
     </package>
     <package name="src.equipments.dto">
       <metrics statements="37" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="create-equipment.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\dto\create-equipment.dto.ts">
+      <file name="create-equipment.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/dto/create-equipment.dto.ts">
         <metrics statements="33" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="23" count="7" type="stmt"/>
-        <line num="25" count="7" type="stmt"/>
-        <line num="28" count="7" type="stmt"/>
-        <line num="31" count="7" type="stmt"/>
-        <line num="34" count="7" type="stmt"/>
-        <line num="36" count="7" type="stmt"/>
-        <line num="39" count="7" type="stmt"/>
-        <line num="42" count="7" type="stmt"/>
-        <line num="45" count="7" type="stmt"/>
-        <line num="48" count="7" type="stmt"/>
-        <line num="50" count="7" type="stmt"/>
-        <line num="53" count="7" type="stmt"/>
-        <line num="56" count="7" type="stmt"/>
-        <line num="59" count="7" type="stmt"/>
-        <line num="62" count="7" type="stmt"/>
-        <line num="65" count="7" type="stmt"/>
-        <line num="68" count="7" type="stmt"/>
-        <line num="71" count="7" type="stmt"/>
-        <line num="74" count="7" type="stmt"/>
-        <line num="78" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
-        <line num="83" count="7" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
         <line num="87" count="0" type="stmt"/>
-        <line num="88" count="7" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
-        <line num="93" count="7" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
       </file>
-      <file name="equipment-response.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\dto\equipment-response.dto.ts">
+      <file name="equipment-response.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/dto/equipment-response.dto.ts">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
       </file>
-      <file name="update-equipment.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\dto\update-equipment.dto.ts">
+      <file name="update-equipment.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/dto/update-equipment.dto.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.equipments.entities">
       <metrics statements="43" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="computer-specs.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\entities\computer-specs.entity.ts">
+      <file name="computer-specs.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/entities/computer-specs.entity.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="23" type="stmt"/>
-        <line num="4" count="23" type="stmt"/>
-        <line num="6" count="23" type="stmt"/>
-        <line num="9" count="23" type="stmt"/>
-        <line num="12" count="23" type="stmt"/>
-        <line num="15" count="23" type="stmt"/>
-        <line num="18" count="23" type="stmt"/>
+        <line num="1" count="17" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="15" count="17" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
       </file>
-      <file name="equipment.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\entities\equipment.entity.ts">
+      <file name="equipment.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/entities/equipment.entity.ts">
         <metrics statements="23" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="23" type="stmt"/>
-        <line num="10" count="23" type="stmt"/>
-        <line num="11" count="23" type="stmt"/>
-        <line num="12" count="23" type="stmt"/>
-        <line num="16" count="23" type="stmt"/>
-        <line num="18" count="23" type="stmt"/>
-        <line num="21" count="23" type="stmt"/>
-        <line num="24" count="23" type="stmt"/>
-        <line num="27" count="23" type="stmt"/>
-        <line num="30" count="23" type="stmt"/>
-        <line num="33" count="23" type="stmt"/>
-        <line num="36" count="23" type="stmt"/>
-        <line num="39" count="23" type="stmt"/>
-        <line num="42" count="23" type="stmt"/>
-        <line num="45" count="23" type="stmt"/>
-        <line num="48" count="23" type="stmt"/>
-        <line num="51" count="23" type="stmt"/>
+        <line num="1" count="17" type="stmt"/>
+        <line num="10" count="17" type="stmt"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
+        <line num="21" count="17" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="30" count="17" type="stmt"/>
+        <line num="33" count="17" type="stmt"/>
+        <line num="36" count="17" type="stmt"/>
+        <line num="39" count="17" type="stmt"/>
+        <line num="42" count="17" type="stmt"/>
+        <line num="45" count="17" type="stmt"/>
+        <line num="48" count="17" type="stmt"/>
+        <line num="51" count="17" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="56" count="23" type="stmt"/>
+        <line num="56" count="17" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="60" count="23" type="stmt"/>
+        <line num="60" count="17" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="64" count="23" type="stmt"/>
+        <line num="64" count="17" type="stmt"/>
       </file>
-      <file name="phone-specs.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\entities\phone-specs.entity.ts">
+      <file name="phone-specs.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/entities/phone-specs.entity.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="23" type="stmt"/>
-        <line num="4" count="23" type="stmt"/>
-        <line num="6" count="23" type="stmt"/>
-        <line num="9" count="23" type="stmt"/>
-        <line num="12" count="23" type="stmt"/>
-        <line num="15" count="23" type="stmt"/>
-        <line num="18" count="23" type="stmt"/>
+        <line num="1" count="17" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="15" count="17" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
       </file>
-      <file name="printer-specs.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\equipments\entities\printer-specs.entity.ts">
+      <file name="printer-specs.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/equipments/entities/printer-specs.entity.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="23" type="stmt"/>
-        <line num="4" count="23" type="stmt"/>
-        <line num="6" count="23" type="stmt"/>
-        <line num="9" count="23" type="stmt"/>
-        <line num="12" count="23" type="stmt"/>
-        <line num="15" count="23" type="stmt"/>
+        <line num="1" count="17" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="9" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="15" count="17" type="stmt"/>
       </file>
     </package>
     <package name="src.labs">
-      <metrics statements="80" coveredstatements="72" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="14"/>
-      <file name="labs.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\labs.controller.ts">
+      <metrics statements="80" coveredstatements="63" conditionals="6" coveredconditionals="6" methods="16" coveredmethods="14"/>
+      <file name="labs.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/labs.controller.ts">
         <metrics statements="24" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="12" count="6" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="31" count="7" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="36" count="7" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="41" count="7" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
-        <line num="46" count="7" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
-        <line num="51" count="7" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
       </file>
-      <file name="labs.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\labs.module.ts">
-        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
+      <file name="labs.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/labs.module.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
       </file>
-      <file name="labs.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\labs.service.ts">
+      <file name="labs.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/labs.service.ts">
         <metrics statements="47" coveredstatements="41" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
         <line num="16" count="13" type="stmt"/>
         <line num="19" count="13" type="stmt"/>
         <line num="22" count="13" type="stmt"/>
@@ -818,88 +818,88 @@
     </package>
     <package name="src.labs.dto">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="create-lab.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\dto\create-lab.dto.ts">
+      <file name="create-lab.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/dto/create-lab.dto.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
-      <file name="update-lab.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\dto\update-lab.dto.ts">
+      <file name="update-lab.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/dto/update-lab.dto.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.labs.entities">
       <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="lab.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\labs\entities\lab.entity.ts">
+      <file name="lab.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/labs/entities/lab.entity.ts">
         <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.rentals">
-      <metrics statements="83" coveredstatements="79" conditionals="20" coveredconditionals="15" methods="14" coveredmethods="14"/>
-      <file name="rentals.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\rentals.controller.ts">
+      <metrics statements="83" coveredstatements="68" conditionals="20" coveredconditionals="15" methods="14" coveredmethods="14"/>
+      <file name="rentals.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/rentals.controller.ts">
         <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
         <line num="23" count="10" type="stmt"/>
-        <line num="27" count="8" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="36" count="8" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="42" count="8" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="58" count="8" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
-        <line num="64" count="8" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
       </file>
-      <file name="rentals.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\rentals.module.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="2" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
+      <file name="rentals.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/rentals.module.ts">
+        <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="rentals.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\rentals.service.ts">
+      <file name="rentals.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/rentals.service.ts">
         <metrics statements="49" coveredstatements="45" conditionals="20" coveredconditionals="15" methods="7" coveredmethods="7"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="9" count="9" type="stmt"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="13" count="9" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
-        <line num="19" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
         <line num="23" count="17" type="stmt"/>
         <line num="27" count="17" type="stmt"/>
         <line num="30" count="17" type="stmt"/>
@@ -944,98 +944,98 @@
     </package>
     <package name="src.rentals.dto">
       <metrics statements="16" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="create-rental.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\dto\create-rental.dto.ts">
+      <file name="create-rental.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/dto/create-rental.dto.ts">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
       </file>
-      <file name="filter-rental.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\dto\filter-rental.dto.ts">
+      <file name="filter-rental.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/dto/filter-rental.dto.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
       </file>
-      <file name="update-rental-status.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\dto\update-rental-status.dto.ts">
+      <file name="update-rental-status.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/dto/update-rental-status.dto.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.rentals.entities">
       <metrics statements="20" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="rental.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\rentals\entities\rental.entity.ts">
+      <file name="rental.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/rentals/entities/rental.entity.ts">
         <metrics statements="20" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="1" count="21" type="stmt"/>
-        <line num="9" count="21" type="stmt"/>
-        <line num="10" count="21" type="stmt"/>
-        <line num="13" count="21" type="stmt"/>
-        <line num="15" count="21" type="stmt"/>
+        <line num="1" count="15" type="stmt"/>
+        <line num="9" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="18" count="21" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="21" type="stmt"/>
+        <line num="21" count="15" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="24" count="21" type="stmt"/>
-        <line num="27" count="21" type="stmt"/>
-        <line num="30" count="21" type="stmt"/>
-        <line num="33" count="21" type="stmt"/>
-        <line num="36" count="21" type="stmt"/>
-        <line num="39" count="21" type="stmt"/>
-        <line num="42" count="21" type="stmt"/>
-        <line num="45" count="21" type="stmt"/>
-        <line num="48" count="21" type="stmt"/>
-        <line num="51" count="21" type="stmt"/>
+        <line num="24" count="15" type="stmt"/>
+        <line num="27" count="15" type="stmt"/>
+        <line num="30" count="15" type="stmt"/>
+        <line num="33" count="15" type="stmt"/>
+        <line num="36" count="15" type="stmt"/>
+        <line num="39" count="15" type="stmt"/>
+        <line num="42" count="15" type="stmt"/>
+        <line num="45" count="15" type="stmt"/>
+        <line num="48" count="15" type="stmt"/>
+        <line num="51" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.roles">
       <metrics statements="46" coveredstatements="46" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
-      <file name="roles.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\roles.controller.ts">
+      <file name="roles.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/roles.controller.ts">
         <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="21" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="22" count="6" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
-        <line num="52" count="8" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
-        <line num="64" count="8" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="75" count="8" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
       </file>
-      <file name="roles.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\roles.module.ts">
+      <file name="roles.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/roles.module.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="roles.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\roles.service.ts">
+      <file name="roles.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/roles.service.ts">
         <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="6" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="9" count="11" type="stmt"/>
-        <line num="14" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
         <line num="17" count="9" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
         <line num="26" count="2" type="cond" truecount="1" falsecount="0"/>
@@ -1056,76 +1056,76 @@
     </package>
     <package name="src.roles.dto">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="create-role.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\dto\create-role.dto.ts">
+      <file name="create-role.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/dto/create-role.dto.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
       </file>
-      <file name="update-role.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\dto\update-role.dto.ts">
+      <file name="update-role.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/dto/update-role.dto.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.roles.entities">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="role.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\roles\entities\role.entity.ts">
+      <file name="role.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/roles/entities/role.entity.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="5" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="10" count="11" type="stmt"/>
-        <line num="13" count="11" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
       </file>
     </package>
     <package name="src.users">
       <metrics statements="66" coveredstatements="47" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="12"/>
-      <file name="users.controller.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\users.controller.ts">
+      <file name="users.controller.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/users.controller.ts">
         <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="11" count="6" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="24" count="8" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="30" count="8" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
-        <line num="36" count="8" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
       </file>
-      <file name="users.module.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\users.module.ts">
+      <file name="users.module.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/users.module.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="7" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="4" count="7" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="users.service.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\users.service.ts">
+      <file name="users.service.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/users.service.ts">
         <metrics statements="43" coveredstatements="24" conditionals="8" coveredconditionals="1" methods="10" coveredmethods="6"/>
-        <line num="1" count="11" type="stmt"/>
-        <line num="7" count="11" type="stmt"/>
-        <line num="8" count="11" type="stmt"/>
-        <line num="9" count="11" type="stmt"/>
-        <line num="11" count="11" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
         <line num="18" count="16" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
@@ -1167,7 +1167,7 @@
     </package>
     <package name="src.users.dto">
       <metrics statements="15" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="create-user.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\dto\create-user.dto.ts">
+      <file name="create-user.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/dto/create-user.dto.ts">
         <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -1178,34 +1178,34 @@
         <line num="22" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
       </file>
-      <file name="update-user.dto.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\dto\update-user.dto.ts">
+      <file name="update-user.dto.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/dto/update-user.dto.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="14" count="9" type="stmt"/>
-        <line num="18" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.users.entities">
       <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="user.entity.ts" path="C:\Users\Danna\OneDrive\Escritorio\7.Octavo Semestre\2.Ingesoft\project-backend-rentastech\src\users\entities\user.entity.ts">
+      <file name="user.entity.ts" path="/home/danna/Desktop/2.Ingesoft/SonarQube/src/users/entities/user.entity.ts">
         <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="21" type="stmt"/>
-        <line num="2" count="21" type="stmt"/>
-        <line num="5" count="21" type="stmt"/>
-        <line num="7" count="21" type="stmt"/>
-        <line num="10" count="21" type="stmt"/>
-        <line num="13" count="21" type="stmt"/>
-        <line num="16" count="21" type="stmt"/>
-        <line num="19" count="21" type="stmt"/>
-        <line num="22" count="21" type="stmt"/>
-        <line num="25" count="21" type="stmt"/>
-        <line num="28" count="21" type="stmt"/>
+        <line num="1" count="15" type="stmt"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+        <line num="7" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="28" count="15" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="31" count="21" type="stmt"/>
+        <line num="31" count="15" type="stmt"/>
       </file>
     </package>
   </project>
