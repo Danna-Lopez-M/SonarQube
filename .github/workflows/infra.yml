@@ -44,7 +44,7 @@ jobs:
       - name: Get Terraform Outputs
         id: tf_outputs
         run: |
-          echo "public_ip=$(terraform output -raw public_ip_address || echo '')" >> $GITHUB_OUTPUT
+          echo "public_ip=$(terraform output -raw vm_public_ip || echo '')" >> $GITHUB_OUTPUT
           echo "vm_admin_user=azureuser" >> $GITHUB_OUTPUT
 
       - name: Save environment variables
