@@ -9,7 +9,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: terraform/environments/dev
+        working-directory: vm-deploy/environments/dev
 
     steps:
       - name: Checkout

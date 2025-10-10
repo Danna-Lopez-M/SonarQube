@@ -30,16 +30,16 @@ jobs:
           terraform_version: 1.6.6
 
       - name: Terraform Init
-        run: terraform -chdir=terraform/environments/dev init -input=false
+        run: terraform -chdir=vm-deploy/environments/dev init -input=false
 
       - name: Terraform Validate
-        run: terraform -chdir=terraform/environments/dev validate
+        run: terraform -chdir=vm-deploy/environments/dev validate
 
       - name: Terraform Plan
-        run: terraform -chdir=terraform/environments/dev plan -input=false
+        run: terraform -chdir=vm-deploy/environments/dev plan -input=false
 
       - name: Terraform Apply
-        run: terraform -chdir=terraform/environments/dev apply -auto-approve -input=false
+        run: terraform -chdir=vm-deploy/environments/dev apply -auto-approve -input=false
 
       - name: Get Terraform Outputs
         id: tf_outputs
