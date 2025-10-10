@@ -36,10 +36,10 @@ jobs:
         run: terraform -chdir=vm-deploy/environments/dev validate
 
       - name: Terraform Plan
-        run: terraform -chdir=vm-deploy/environments/dev plan -input=false
+        run: terraform -chdir=vm-deploy/environments/dev plan -input=false -var="admin_password=${{ secrets.ADMIN_PASSWORD }}"
 
       - name: Terraform Apply
-        run: terraform -chdir=vm-deploy/environments/dev apply -auto-approve -input=false
+        run: terraform -chdir=vm-deploy/environments/dev apply -auto-approve -input=false -var="admin_password=${{ secrets.ADMIN_PASSWORD }}"
 
       - name: Get Terraform Outputs
         id: tf_outputs
