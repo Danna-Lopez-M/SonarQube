@@ -1,0 +1,32 @@
+# Archivo de ejemplo para terraform.tfvars
+# Copia este archivo como terraform.tfvars.local y configura tus valores
+
+# Configuración básica
+project_name        = "ingesoft"
+environment         = "dev"
+location            = "eastus2"
+resource_group_name = "rg-ingesoft-dev"
+
+# Configuración de la VM
+vm_size        = "Standard_B1s"
+admin_username = "azureuser"
+admin_password = "TuContraseñaSegura123!"  # Cambia esta contraseña
+
+# Configuración de red
+vnet_address_space       = ["10.0.0.0/16"]
+subnet_address_prefixes  = ["10.0.1.0/24"]
+
+# Reglas de seguridad (SSH desde cualquier IP para desarrollo)
+security_rules = [
+  {
+    name                       = "allow-ssh"
+    priority                   = 1001
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefixes    = ["0.0.0.0/0"]
+    destination_address_prefix = "*"
+  }
+]
