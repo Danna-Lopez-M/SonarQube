@@ -5,6 +5,7 @@ on:
     workflows: ["Deploy Infrastructure (Azure VM with Terraform)"]
     types:
       - completed
+  workflow_dispatch:    
 
 permissions:
   contents: read
