@@ -208,33 +208,20 @@ cat trivy_report.txt
 
 ### 7. Pipeline Automatizado de Despliegue
 
-Se implementó un pipeline de GitHub Actions para automatizar el despliegue de SonarQube:
+Se implementó un pipeline de GitHub Actions para automatizar el despliegue de SonarQube y de Trivy:
 
 #### Configuración de Secrets
 
 Primero, configurar los secrets necesarios en GitHub:
 
-- `VM_PUBLIC_IP`: IP pública de la VM (ej: 20.57.43.71)
-- `VM_USERNAME`: Usuario de la VM (ej: azureuser)
-- `VM_PASSWORD`: Contraseña de la VM
+- `ADMIN_PASSWORD`: Contraseña del usuario administrador de la máquina virtual de Azure
+- `AZURE_CREDENTIALS`: Credenciales JSON generadas desde Azure para permitir la autenticación automática con Terraform
+- `SONAR_HOST_URL`: URL del servidor de SonarQube desplegado (ejemplo: http://<IP_VM>:9000)
+- `SONAR_PROJECT_KEY`: Identificador único del proyecto dentro de SonarQube 
+- `SONAR_TOKEN`: Token de autenticación del usuario administrador de SonarQube 
 
-#### Pipeline Automatizado
 
-El pipeline `.github/workflows/deploy-sonarqube-vm.yml` realiza automáticamente:
-
-1. **Verificación de conectividad** con la VM
-2. **Copia de archivos** (docker-compose.yml, sonar-project.properties)
-3. **Instalación de Docker** (si no está instalado)
-4. **Despliegue de SonarQube** con Docker Compose
-5. **Configuración del NSG** para el puerto 9000
-6. **Verificación de salud** del servicio
-7. **Notificaciones** en PRs y resumen de despliegue
-
-#### Triggers del Pipeline
-
-El pipeline se ejecuta automáticamente en:
-- Push a ramas `main` o `develop`
-- Pull Requests a `main`
-- Ejecución manual con selección de environment
+![Generación de Infraestructura](imagenes/pipeline-infra.png)
+![Generación de Integración Continua](imagenes/pipeline-ci.png)
 
 
