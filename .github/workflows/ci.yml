@@ -67,6 +67,7 @@ jobs:
           npm install -g sonarqube-scanner
           npx sonar-scanner \
             -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+            -Dsonar.organization=danna-lopez-m \
             -Dsonar.sources=src \
             -Dsonar.tests=src \
             -Dsonar.test.inclusions=**/*.spec.ts,**/*.integration.spec.ts,**/*e2e-spec.ts \
