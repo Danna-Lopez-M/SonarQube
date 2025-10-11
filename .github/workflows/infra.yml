@@ -49,11 +49,16 @@ jobs:
           echo "public_ip=$public_ip" >> $GITHUB_OUTPUT
           echo "vm_admin_user=azureuser" >> $GITHUB_OUTPUT
           echo "IP pública detectada: $public_ip"
-
+      
       - name: Save environment variables
         run: |          
           echo "SONAR_HOST_URL=http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_ENV
           echo "VM_USER=${{ steps.tf_outputs.outputs.vm_admin_user }}" >> $GITHUB_ENV
+
+      - name: Wait for VM to be ready
+        run: |
+          echo "⏳ Esperando 40 segundos a que la VM inicialice el servicio SSH..."
+          sleep 40
 
       - name: Verify Docker and SonarQube
         run: |
