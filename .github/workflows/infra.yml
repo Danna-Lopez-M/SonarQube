@@ -62,5 +62,11 @@ jobs:
 
       - name: Verify Docker and SonarQube
         run: |
-          ssh -o StrictHostKeyChecking=no $VM_USER@${{ steps.tf_outputs.outputs.public_ip }} "docker ps"
+          echo "🔍 Verificando contenedores Docker en la VM..."
+          expect <<EOF
+          spawn ssh -o StrictHostKeyChecking=no $VM_USER@$VM_IP "docker ps"
+          expect "password:"
+          send "$VM_PASSWORD\r"
+          interact
+          EOF
           echo "✅ Infraestructura desplegada correctamente"
