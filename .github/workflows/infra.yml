@@ -45,7 +45,7 @@ jobs:
         id: tf_outputs
         run: |
           echo "📤 Obteniendo outputs de Terraform..."
-          public_ip=$(terraform output -raw vm_public_ip 2>/dev/null || echo "")
+          public_ip=$(terraform -chdir=vm-deploy/environments/dev output -raw vm_public_ip 2>/dev/null || echo "")
           echo "public_ip=$public_ip" >> $GITHUB_OUTPUT
           echo "vm_admin_user=azureuser" >> $GITHUB_OUTPUT
           echo "IP pública detectada: $public_ip"
