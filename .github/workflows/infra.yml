@@ -61,7 +61,15 @@ jobs:
           sleep 40
 
       - name: Verify Docker and SonarQube
+        env:
+          VM_USER: ${{ env.VM_USER }}
+          VM_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          VM_IP: ${{ steps.tf_outputs.outputs.public_ip }}
         run: |
+          echo "⏳ Instalando expect..."
+          sudo apt-get update -y
+          sudo apt-get install -y expect
+    
           echo "🔍 Verificando contenedores Docker en la VM..."
           expect <<EOF
           spawn ssh -o StrictHostKeyChecking=no $VM_USER@$VM_IP "docker ps"
