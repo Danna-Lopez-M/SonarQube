@@ -44,11 +44,14 @@ jobs:
       - name: Get Terraform Outputs
         id: tf_outputs
         run: |
-          echo "public_ip=$(terraform output -raw vm_public_ip || echo '')" >> $GITHUB_OUTPUT
+          echo "📤 Obteniendo outputs de Terraform..."
+          public_ip=$(terraform output -raw vm_public_ip 2>/dev/null || echo "")
+          echo "public_ip=$public_ip" >> $GITHUB_OUTPUT
           echo "vm_admin_user=azureuser" >> $GITHUB_OUTPUT
+          echo "IP pública detectada: $public_ip"
 
       - name: Save environment variables
-        run: |
+        run: |          
           echo "SONAR_HOST_URL=http://${{ steps.tf_outputs.outputs.public_ip }}:9000" >> $GITHUB_ENV
           echo "VM_USER=${{ steps.tf_outputs.outputs.vm_admin_user }}" >> $GITHUB_ENV
 
