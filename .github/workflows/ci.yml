@@ -62,10 +62,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
+          PROJECT_KEY: ${{ env.SONAR_PROJECT_KEY }}
         run: |
           npm install -g sonarqube-scanner
           npx sonar-scanner \
-            -Dsonar.projectKey=project-backend-rentastech \
+            -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
             -Dsonar.sources=src \
             -Dsonar.tests=src \
             -Dsonar.test.inclusions=**/*.spec.ts,**/*.integration.spec.ts,**/*e2e-spec.ts \
